@@ -1,0 +1,16 @@
+name: jupyterhub
+
+services:
+  jupyterhub:
+    build:
+      dockerfile: jupyterhub.dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    networks:
+      - "jupyterhub"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+networks:
+  jupyterhub:
